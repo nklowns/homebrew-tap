@@ -1,11 +1,11 @@
 cask "antigravity-linux" do
   arch arm: "arm", intel: "x64"
 
-  version "1.20.6,5891862175809536"
+  version "1.20.6-5891862175809536"
   sha256 arm64_linux:  "6e17f33d8ccb5622affb3590efccb87c3c4dd505f1d3b0f8506f1c20c39c026a",
          x86_64_linux: "ad382bf321a6216d07f95af1f613e03f5a07fdf6fc6632b769ce83d81afdd567"
 
-  url "https://edgedl.me.gvt1.com/edgedl/release2/j0qc3/antigravity/stable/#{version.csv.first}-#{version.csv.second}/linux-#{arch}/Antigravity.tar.gz",
+  url "https://edgedl.me.gvt1.com/edgedl/release2/j0qc3/antigravity/stable/#{version}/linux-#{arch}/Antigravity.tar.gz",
       verified: "edgedl.me.gvt1.com/edgedl/release2/j0qc3/antigravity/"
   name "Google Antigravity"
   desc "AI Coding Agent IDE"
@@ -18,7 +18,7 @@ cask "antigravity-linux" do
       match = json["url"]&.match(regex)
       next if match.blank?
 
-      match[1]&.tr("-", ",").to_s
+      match[1]
     end
   end
 
